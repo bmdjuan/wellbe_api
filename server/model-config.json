@@ -26,9 +26,15 @@
     "dataSource": "localDatabase",
     "public": false
   },
+  "Email": {
+    "dataSource": "emailDs"
+  },
   "wb_user": {
     "dataSource": "localDatabase",
-    "public": true
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
   },
   "notifications_settings": {
     "dataSource": "localDatabase",
