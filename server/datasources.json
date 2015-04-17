@@ -2,5 +2,14 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "localDatabase": {
+    "name": "localDatabase",
+    "connector": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "wellbeapi-dev",
+    "username": "",
+    "password": ""
   }
 }

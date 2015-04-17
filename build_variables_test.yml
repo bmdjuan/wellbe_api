@@ -1,0 +1,76 @@
+# application we are working on
+application: "wellbeapi"
+# environment
+env: "test"
+
+# mongodb connection informations
+# port It'll be always the same for all the servers on a same datacenter.
+mongodb_port: 27017
+mongodb_user: ""
+mongodb_password: ""
+mongodb_database: "{{ application }}-{{ env }}"
+# URLs databases: hosts
+mongodb_hosts: [ "localhost"]
+#adapter used to manage the sessions in the backoffice
+adapter_database: "mongodb"
+
+# URLs databases
+# url uat for sails-mongo: 'mongodb://consumerwall-uat:fdsgdsgdsgdgssd@maple:27018,cocobolo:2718/consumerwall-uat
+# url dev: 'mongodb://localhost:27017/consumerwall-test
+# route for the ssl key for the encription in the back office. It is an absolute route
+
+ssl_key_path: "/Users/bmartin/Documents/consumerwall/bowebapp/config/env/ssl/server.key"
+ssl_cert_path: "/Users/bmartin/Documents/consumerwall/bowebapp/config/env/ssl/server.crt"
+
+
+#logs - datePattern to name the files by date. Always start by .
+logs_datepattern: ".yyyy-MM-dd"
+logs_level: "debug"
+
+#logs management: directory and name of the file
+logs_dir: "./debug"
+logs_file: "batch"
+
+
+#proxy
+proxy_host: "172.27.185.200"
+proxy_port: 80
+
+#Configuration loopback
+#Root URI of REST API
+config_rest_api_root: "/api"
+
+#Host or IP address used to create the Node HTTP server. If a request comes to a different host or IP address,
+#then the application won't accept the connection.
+server_host: "0.0.0.0"
+server_port: 3000
+
+#If true, in HTTP paths, converts:
+# Uppercase letters to lowercase.
+# Underscores (_) to dashes (-).
+# CamelCase to dash-delimited.
+# Does not affect placeholders (for example ":id").
+normalize_http_path: "true"
+
+#Parse only objects and arrays.
+json_strict: "false"
+
+# Parse extended syntax with the qs module
+url_extended: "true"
+
+#Configures the Access-Control-Allow-Origin CORS header.
+#Expects a string (ex: "http://example.com/"). Set to true to reflect the request origin,
+#as defined by req.header('Origin').
+#Set to false to disable CORS. Can also be set to a function, which takes the request origin as the first parameter
+#and a callback (which expects the signature err [object], allow [bool]) as the second.
+config_cors_origin: "false"
+
+#Configures the Access-Control-Allow-Credentials CORS header. Set to true to pass the header, otherwise it is omitted.
+config_cors_credentials: "false"
+
+#Set to true to disable stack traces; removes the stack property from the Error object.
+#Ignored when NODE_ENV is "production", when stack traces are always disabled.
+error_handler_stacktrace: "false"
+
+
+

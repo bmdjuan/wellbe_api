@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "localDatabase": {
+      "name": "localDatabase",
+      "connector": "{{ adapter_database }}",
+      "host": "{{ mongodb_host }}",
+      "port": {{ mongodb_port }},
+      "database": "{{ application }}-{{ env }}",
+      "username": "{{ mongodb_user }}",
+      "password": "{{ mongodb_password }}"
+    }
+}
+

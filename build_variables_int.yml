@@ -1,0 +1,93 @@
+# application we are working on
+application: "consumerwall"
+# environment
+env: "int"
+
+# mongodb connection informations
+mongodb_host: "localhost"
+mongodb_port: "27017"
+mongodb_user: ""
+mongodb_password: ""
+mongodb_database: "{{ application }}-{{ env }}"
+
+# route for the ssl key for the encription in the back office. It is an absolute route
+ssl_key_path: "/home/axauser/node-projects/boconsumerwall/consumerwall/bowebapp/config/env/ssl/server.key"
+ssl_cert_path: "/home/axauser/node-projects/boconsumerwall/consumerwall/bowebapp/config/env/ssl/server.crt"
+
+#batch service_port allow to the backoffice consume service from the batch under demand
+# it should be different from webapp_port and boapp_port
+service_port: 3001
+
+#Flat Enables console logging for various parts of the job
+twitter_status_debug: "false"
+twitter_resource_debug: "false"
+
+#logs - datePattern to name the files by date. Always start by .
+logs_datepattern: ".yyyy-MM-dd"
+logs_level: "debug"
+
+#logs webapp - dir must exist
+logs_webapp_path: "logs/cwall.log"
+
+#logs back office - dir must exist
+logs_boapp_path: "logs/bocwall.log"
+
+#logs batch
+logs_batch_dir: "./debug"
+logs_batch_file: "batch"
+
+#models
+database_migrate: "alter"
+
+#ports
+webapp_port: 1340
+boapp_port: 1342
+
+#proxy
+proxy_host: "192.168.62.5"
+proxy_port: 3128
+
+#session manage in backoffice application
+#http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.session.html
+#production-uat set up a shared redis session store that can be shared across multiple Sails.js servers
+session_collection: "sessions"
+stringify_session: "true"
+ssl_session: "false"
+
+#adapter used to manage the sessions in the backoffice
+adapter_mongo: "mongo"
+auto_reconnect: "false"
+
+#allow to login in backoffice without passAxa- This MUST be false in Production!!!!!!!!!
+bo_workaround: "true"
+
+#Name of the cookies to prevent conflicts with other sails application
+name_cookie: "bo-int"
+
+# Key to access to the embedly API
+#	Production	mobile-sp.devel@axa-groupsolutions.com	6c0d4b8dc1e1485fb22b53fac9c26923
+# 	UAT	agsmobcoe@gmail.com	ac90eaedd9bc4f8486624eb71851a646
+# 	DEV	agstests@gmail.com	4d2f5759d6f84966844e72fa8abc4558
+#   TEST BEA 0bc8d93019554857a2e41b175050b478
+embedly_key: "4d2f5759d6f84966844e72fa8abc4558"
+
+#  Key to access to twitter API
+# o	Application Name : WALL_PROD_ACCOUNT
+#  	"twitter_oauth_token" : "989280133-WXykSa4FEaSMmBiH9Ghrnw3R9FzTe0CAYZS6T97N",
+#  	"twitter_oauth_token_secret" : "S6Syrpth6MCApQu0lLExrEEBcEFLgZLx6ekIHHcP2DZtE",
+#  	"twitter_oauth_consumer_key" : "My6vu2qJp91N7fSZ2a4vf7Hdy",
+#  	"twitter_oauth_consumer_secret" : "9qMEx6lXrNV3c8OnUSyG4A511fgBGHp92FQ4M6gaGGly5XblYr",
+
+#  WALL_DEV_ACCOUNT
+consumer_key: "hlI6R7NfvGZ04tAxd7LoWLBDa"
+consumer_secret: "5MwWtsgU5WiGbTWIkHxzRGYU8ITTcEABj5ex6IxXrKfWp28k7a"
+access_token: "2695729999-df1qTiySW9FhEiwiKIDgrl5SxbAx9eH7cyaAax6"
+access_token_secret: "PsFjfhDRwhkp0sI6y9Z0FGAuXKjd6UnP2XpPP8tnFba1w"
+
+
+#  Key to access to radian 6 API
+#  WALL_DEV_ACCOUNT
+
+radian6_key: "amVhbmNocmlzdG9waGUucmlldUBheGEtZ3JvdXBzb2x1dGlvbnMuY29tOlNhbWlpbWFzITEx"
+radian6_user: "Account_API"
+radian6_pass: "AXAGS-2013"

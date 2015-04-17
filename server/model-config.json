@@ -8,22 +8,22 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "localDatabase"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "localDatabase",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "localDatabase",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "localDatabase",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "localDatabase",
     "public": false
   }
 }

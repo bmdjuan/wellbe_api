@@ -1,0 +1,30 @@
+{
+  "restApiRoot": "{{ config_rest_api_root }}",
+  "host": "{{ server_host }}",
+  "port": {{ server_port }},
+  "remoting": {
+    "context": {
+      "enableHttpContext": false
+    },
+    "rest": {
+      "normalizeHttpPath": {{ normalize_http_path }},
+      "xml": false
+    },
+    "json": {
+      "strict": '{{ json_strict }}',
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": '{{ url_extended }}',
+      "limit": "100kb"
+    },
+    "cors": {
+      "origin": '{{ config_cors_origin }}',
+      "credentials": '{{ config_cors_credentials }}'
+    },
+    "errorHandler": {
+      "disableStackTrace": '{{ error_handler_statcktrace }}'
+    }
+  },
+  "legacyExplorer": false
+}
