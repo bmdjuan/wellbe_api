@@ -1,0 +1,35 @@
+{
+  "name": "invitations",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "properties": {
+    "source": {
+      "type": "string",
+      "required": true,
+      "comments": "user that sent the friendship(guid)"
+    },
+    "target": {
+      "type": "string",
+      "required": true,
+      "comments": "user being invited(guid)"
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "comments": "Status of the invite. Possible values: newUser: when inviting a user that is not using the app. newFriend: when inviting a user that is using the app. accepted: when the invite is accepted by target user rejected: when the invite has been rejected by target user"
+    },
+    "createdTS": {
+      "type": "date",
+      "required": true
+    },
+    "lastUpdateTS": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

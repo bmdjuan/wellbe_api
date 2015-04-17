@@ -1,12 +1,17 @@
 {
   'config_files': [
     {
-      'file_path': 'server/config.json.j2',
-      'file_template': 'api/templates/config.json.j2.j2'
+      'file_path': 'server/config.json',
+      'file_template': 'api/templates/config.json.j2'
     },
     {
-      'file_path': 'server/datasources.json.j2',
-      'file_template': 'api/templates/datasources.json.j2.j2'
+      'file_path': 'server/datasources.json',
+      'file_template': 'api/templates/datasources.json.j2'
+    },
+    {
+      'file_path': 'server/boot/ssl-config.js',
+      'file_template': 'api/templates/ssl-config.js.j2'
     }
+
   ]
 }

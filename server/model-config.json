@@ -25,5 +25,21 @@
   "Role": {
     "dataSource": "localDatabase",
     "public": false
+  },
+  "wb_user": {
+    "dataSource": "localDatabase",
+    "public": true
+  },
+  "notifications_settings": {
+    "dataSource": "localDatabase",
+    "public": true
+  },
+  "friendship": {
+    "dataSource": "localDatabase",
+    "public": true
+  },
+  "invitations": {
+    "dataSource": "localDatabase",
+    "public": true
   }
 }

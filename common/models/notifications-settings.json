@@ -1,0 +1,26 @@
+{
+  "name": "notifications_settings",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "properties": {
+    "code": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "comments": "Possible values: string boolean integer"
+    },
+    "value": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

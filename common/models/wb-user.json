@@ -1,0 +1,69 @@
+{
+  "name": "WB_User",
+  "base": "User",
+  "strict": false,
+  "idInjection": false,
+  "comments": "idInjection - Whether to automatically add an id property to the model.  True by default.",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "email": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": false
+    },
+    "language": {
+      "type": "string",
+      "required": true,
+      "comments": "ISO code for the user language. (http://en.wikipedia.org/wiki/IETF_language_tag)"
+    },
+    "crationTS": {
+      "type": "date",
+      "required": true
+    },
+    "acceptedTCTS": {
+      "type": "date",
+      "required": false,
+      "comments": "Date of the last time the user accepted Terms and conditions."
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "comments": "Encrypted password with SSHA"
+    },
+    "lastPassUpdate": {
+      "type": "date"
+    },
+    "lasUpdateTS": {
+      "type": "date",
+      "required": true,
+      "comments": "Last time the user record was updated"
+    },
+    "settings": {
+      "type": [
+        "object"
+      ],
+      "comments": "User is allowed to activate/deactivate notifications, this needs to be kept as an entity by itself and probably stored in the MMW User settings component."
+    },
+    "devide_settings": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

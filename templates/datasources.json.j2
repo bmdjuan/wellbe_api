@@ -6,11 +6,7 @@
   "localDatabase": {
       "name": "localDatabase",
       "connector": "{{ adapter_database }}",
-      "host": "{{ mongodb_host }}",
-      "port": {{ mongodb_port }},
-      "database": "{{ application }}-{{ env }}",
-      "username": "{{ mongodb_user }}",
-      "password": "{{ mongodb_password }}"
+      "url": "mongodb://{{ mongodb_user }}:{{ mongodb_password }}@{% for server in mongodb_hosts %}{{ server }}:{{ mongodb_port}}{% if not loop.last %},{% endif %}{% endfor %}/{{ application }}-{{ env }}"
     }
 }
 

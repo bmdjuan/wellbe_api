@@ -5,6 +5,11 @@ env: "test"
 
 # mongodb connection informations
 # port It'll be always the same for all the servers on a same datacenter.
+# mongodb connection informations
+# port It'll be always the same for all the servers on a same datacenter.
+# URLs databases
+# url uat: 'mongodb://wellbeapi-uat:fdsgdsgdsgdgssd@maple:27018,cocobolo:2718/wellbeapi-uat'
+# url dev: 'mongodb://localhost:27017/wellbe-test'
 mongodb_port: 27017
 mongodb_user: ""
 mongodb_password: ""
@@ -14,9 +19,6 @@ mongodb_hosts: [ "localhost"]
 #adapter used to manage the sessions in the backoffice
 adapter_database: "mongodb"
 
-# URLs databases
-# url uat for sails-mongo: 'mongodb://consumerwall-uat:fdsgdsgdsgdgssd@maple:27018,cocobolo:2718/consumerwall-uat
-# url dev: 'mongodb://localhost:27017/consumerwall-test
 # route for the ssl key for the encription in the back office. It is an absolute route
 
 ssl_key_path: "/Users/bmartin/Documents/consumerwall/bowebapp/config/env/ssl/server.key"

@@ -1,0 +1,5 @@
+var path = require('path'),
+  fs = require("fs");
+
+exports.privateKey = fs.readFileSync({{ ssl_key_path }})).toString();
+exports.certificate = fs.readFileSync({{ ssl_cert_path }}).toString();
