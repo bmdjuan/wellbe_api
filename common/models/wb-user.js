@@ -17,11 +17,11 @@ module.exports = function(WBUser) {
     WBUser.validatesUniquenessOf('guid', {message: 'User already exists'});
   }
 
-  WBUser.isValid(function (valid) {
+  /*WBUser.isValid(function (valid) {
     if (!valid) {
       WBUser.errors // hash of errors {attr: [errmessage, errmessage, ...], attr: ...}
     }
-  })
+  })*/
 
 
   //send verification email after registration

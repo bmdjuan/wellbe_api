@@ -1,5 +1,5 @@
 {
-  "name": "WB_User",
+  "name": "wb_user",
   "base": "User",
   "strict": false,
   "idInjection": false,
