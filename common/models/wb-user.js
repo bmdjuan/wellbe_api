@@ -3,8 +3,30 @@ var path = require('path');
 
 module.exports = function(WBUser) {
 //Relations : http://docs.strongloop.com/display/public/LB/Tutorial%3A+model+relations
-
+  //console.log(JSON.stringify(WBUser));
+  var wb_user = new WBUser();
   // Setup validations
+  //send verification email after registration
+  WBUser.beforeRemote('create', function(context, user) {
+    console.log('> user.beforeRemote triggered');
+
+    var options = {
+      type: 'email',
+      to: user.email,
+      from: 'noreply@loopback.com',
+      subject: 'Thanks for registering.',
+      template: path.resolve(__dirname, '../../server/views/verify.ejs'),
+      redirect: '/verified',
+      user: user
+    };
+
+    user.isValid(function (valid) {
+      if (!valid) {
+        WBUser.errors // hash of errors {attr: [errmessage, errmessage, ...], attr: ...}
+      }
+    });
+  });
+
   WBUser.validatesPresenceOf('guid','name', 'email','language','password');
   WBUser.validatesLengthOf('password', {min: 5, message: {min: 'Password is too short'}});
   WBUser.validatesUniquenessOf('email', {message: 'email is not unique'});
@@ -17,11 +39,6 @@ module.exports = function(WBUser) {
     WBUser.validatesUniquenessOf('guid', {message: 'User already exists'});
   }
 
-  /*WBUser.isValid(function (valid) {
-    if (!valid) {
-      WBUser.errors // hash of errors {attr: [errmessage, errmessage, ...], attr: ...}
-    }
-  })*/
 
 
   //send verification email after registration
@@ -38,22 +55,22 @@ module.exports = function(WBUser) {
       user: user
     };
 
-    WBUser.verify(options, function(err, response) {
-      if (err) {
-        next(err);
-        return;
-      }
-
-      console.log('> verification email sent:', response);
-
-      context.res.render('response', {
-        title: 'Signed up successfully',
-        content: 'Please check your email and click on the verification link '
-        + 'before logging in.',
-        redirectTo: '/',
-        redirectToLinkText: 'Log in'
-      });
-    });
+    // user.verify(options, function(err, response) {
+    //  if (err) {
+    //    next(err);
+    //    return;
+    //  }
+    //
+    //  console.log('> verification email sent:', response);
+    //
+    //  context.res.render('response', {
+    //    title: 'Signed up successfully',
+    //    content: 'Please check your email and click on the verification link '
+    //    + 'before logging in.',
+    //    redirectTo: '/',
+    //    redirectToLinkText: 'Log in'
+    //  });
+    //});
   });
 
   //send password reset link when requested
